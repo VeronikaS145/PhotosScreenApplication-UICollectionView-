@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.dataSource = self
         collectionView.delegate = self
+//        collectionView.register(MyAlbumsCollectionViewCell.self, forCellWithReuseIdentifier: MyAlbumsCollectionViewCell.identifier)
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
         return collectionView
     }()
@@ -59,7 +60,7 @@ class ViewController: UIViewController {
                                                       heightDimension: .fractionalHeight(1))
                 
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
+                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0)
                 
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 2.1),
@@ -147,41 +148,35 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        4
+        return CompositionalModel.photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0: return 8
-        case 1: return 8
-        case 2: return 5
-        case 3: return 5
-        default: return 1
-        }
+        return CompositionalModel.photoArray[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath)
-            cell.backgroundColor = .systemGray2
-            return cell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+            item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
+            return item
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath)
-            cell.backgroundColor = .systemGray3
-            return cell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+            item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
+            return item
         case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath)
-            cell.backgroundColor = .systemGray4
-            return cell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+            item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
+            return item
         case 3:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath)
-            cell.backgroundColor = .systemGray5
-            return cell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+            item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
+            return item
         default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath)
-            cell.backgroundColor = .systemRed
-            return cell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+            item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
+            return item
         }
     }
     

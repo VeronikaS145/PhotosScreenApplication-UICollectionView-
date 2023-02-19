@@ -28,19 +28,19 @@ extension CompositionalModel {
         [CompositionalModel(sharedImage: "police2", image: "police", title: "The Police", subtitle: 46),
          CompositionalModel(sharedImage: "led2", image: "led", title: "Led Zeppelin", subtitle: 23),
          CompositionalModel(sharedImage: "megadeth2", image: "megadeth", title: "Megadeth", subtitle: 21),
-         CompositionalModel(sharedImage: "red2", image: "red", title: "Red Hot Chili Peppers", subtitle: 30)],
+         CompositionalModel(sharedImage: "red2", image: "red", title: "Red Hot Chili Peppers", subtitle: 30)]
         
-        [CompositionalModel(image: "video", title: "Videos", subtitle: 655),
-         CompositionalModel(image: "person.crop.rectangle", title: "Selfies", subtitle: 7),
-          CompositionalModel(image: "livephoto", title: "Live Photos", subtitle: 28),
-          CompositionalModel(image: "cube", title: "Portrait", subtitle: 2),
-          CompositionalModel(image: "timelapse", title: "Time-lapse", subtitle: 1),
-          CompositionalModel(image: "camera.viewfinder", title: "Screenshots", subtitle: 1),
-          CompositionalModel(image: "record.circle", title: "Screen Recordings", subtitle: 3)],
-        
-        [CompositionalModel(image: "square.and.arrow.down", title: "Imports", subtitle: 655),
-         CompositionalModel(image: "square.on.square", title: "Dublicates", subtitle: 7),
-          CompositionalModel(image: "eye.slash", title: "Hidden", subtitle: 28),
-          CompositionalModel(image: "trash", title: "Recently Deleted", subtitle: 2)]
+//        [CompositionalModel(image: "video", title: "Videos", subtitle: 655),
+//         CompositionalModel(image: "person.crop.rectangle", title: "Selfies", subtitle: 7),
+//          CompositionalModel(image: "livephoto", title: "Live Photos", subtitle: 28),
+//          CompositionalModel(image: "cube", title: "Portrait", subtitle: 2),
+//          CompositionalModel(image: "timelapse", title: "Time-lapse", subtitle: 1),
+//          CompositionalModel(image: "camera.viewfinder", title: "Screenshots", subtitle: 1),
+//          CompositionalModel(image: "record.circle", title: "Screen Recordings", subtitle: 3)],
+//
+//        [CompositionalModel(image: "square.and.arrow.down", title: "Imports", subtitle: 655),
+//         CompositionalModel(image: "square.on.square", title: "Dublicates", subtitle: 7),
+//          CompositionalModel(image: "eye.slash", title: "Hidden", subtitle: 28),
+//          CompositionalModel(image: "trash", title: "Recently Deleted", subtitle: 2)]
     ]
 }

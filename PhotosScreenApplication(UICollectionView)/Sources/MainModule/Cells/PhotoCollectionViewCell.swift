@@ -7,15 +7,15 @@
 
 import UIKit
 
-class SharedCollectionViewCell: UICollectionViewCell {
+class PhotoCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "SharedCollectionViewCell"
+    static let identifier = "PhotosCollectionViewCell"
     
     // MARK: - Outlets
     
     private lazy var image: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 40
+        imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -23,23 +23,25 @@ class SharedCollectionViewCell: UICollectionViewCell {
     
     private lazy var littleImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = true
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.borderWidth = 1
+        imageView.layer.cornerRadius = 19
+        imageView.layer.borderColor = UIColor.white.cgColor
         return imageView
     }()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont(name: "TitleLabel", size: 15)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         return label
     }()
     
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.font = UIFont(name: "SubitleLabel", size: 10)
+        label.textColor = .systemGray
+        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         return label
     }()
     
@@ -50,6 +52,7 @@ class SharedCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupHierarchy()
         setupLayout()
+        prepareForReuse()
     }
     
     required init?(coder: NSCoder) {
@@ -60,6 +63,7 @@ class SharedCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.littleImage.image = nil
         self.image.image = nil
     }
     
@@ -67,31 +71,51 @@ class SharedCollectionViewCell: UICollectionViewCell {
     
     private func setupHierarchy() {
         contentView.addSubview(image)
+        contentView.addSubview(littleImage)
         contentView.addSubview(titleLabel)
         contentView.addSubview(subtitleLabel)
     }
     
     private func setupLayout() {
         image.snp.makeConstraints { make in
-            make.left.right.top.equalTo(contentView)
-            make.bottom.equalTo(10)
+            make.left.top.right.equalTo(contentView)
+            make.height.equalTo(170)
         }
-        
+
         littleImage.snp.makeConstraints { make in
-            make.right.bottom.equalTo(image).offset(5)
-            make.height.width.equalTo(20)
+            make.height.width.equalTo(38)
+            make.right.bottom.equalTo(image).offset(-7)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.left.equalTo(contentView)
-            make.width.equalTo(contentView)
-            make.top.equalTo(image).offset(3)
+            make.top.equalTo(image.snp.bottom).offset(5)
+            make.left.equalTo(contentView).offset(2)
         }
-        
+
         subtitleLabel.snp.makeConstraints { make in
-            make.left.equalTo(contentView)
-            make.width.equalTo(contentView)
-            make.top.equalTo(titleLabel).offset(3)
+            make.top.equalTo(titleLabel.snp.bottom)
+            make.left.equalTo(contentView).offset(2)
         }
+    }
+    
+    // MARK: - Private methods
+    
+    private func setBorderLittleImage() {
+        if littleImage.image != nil {
+            littleImage.layer.borderWidth = 1
+        } else {
+            littleImage.layer.borderWidth = 0
+        }
+    }
+    
+    // MARK: - Configuration
+    
+    func configuration(model: CompositionalModel) {
+        self.littleImage.image = UIImage(named: model.sharedImage ?? "")
+        self.image.image = UIImage(named: model.image)
+        self.titleLabel.text = model.title
+        self.subtitleLabel.text = "\(model.subtitle)"
+        
+        setBorderLittleImage()
     }
 }
