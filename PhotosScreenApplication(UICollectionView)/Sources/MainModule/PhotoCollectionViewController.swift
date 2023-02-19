@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class PhotoCollectionViewController: UIViewController {
 
     // MARK: - Outlets
     
@@ -16,8 +16,8 @@ class ViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.dataSource = self
         collectionView.delegate = self
-//        collectionView.register(MyAlbumsCollectionViewCell.self, forCellWithReuseIdentifier: MyAlbumsCollectionViewCell.identifier)
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
+        collectionView.register(MediaTableViewCell.self, forCellWithReuseIdentifier: MediaTableViewCell.identifier)
         return collectionView
     }()
     
@@ -146,7 +146,9 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    // MARK: - Extensions
+
+extension PhotoCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return CompositionalModel.photoArray.count
     }
@@ -166,13 +168,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
             item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
             return item
         case 2:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
-            item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
-            return item
+//            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediaTableViewCell.identifier, for: indexPath) as! MediaTableViewCell
         case 3:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
-            item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
-            return item
+//            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediaTableViewCell.identifier, for: indexPath) as! MediaTableViewCell
         default:
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
             item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
