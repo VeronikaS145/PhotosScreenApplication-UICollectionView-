@@ -16,18 +16,31 @@ struct CompositionalModel: Hashable {
 
 extension CompositionalModel {
     static let photoArray = [
-        [CompositionalModel(image: "", title: "Recents", subtitle: 655),
-         CompositionalModel(image: "", title: "Instagram", subtitle: 7),
-          CompositionalModel(image: "", title: "Favourites", subtitle: 28),
-          CompositionalModel(image: "", title: "Polar", subtitle: 2),
-          CompositionalModel(image: "", title: "FLTR", subtitle: 1),
-          CompositionalModel(image: "", title: "Dream", subtitle: 1),
-          CompositionalModel(image: "", title: "Pinterest", subtitle: 3),
-          CompositionalModel(image: "", title: "VN", subtitle: 2)],
+        [CompositionalModel(image: "recents", title: "Recents", subtitle: 655),
+         CompositionalModel(image: "instagram", title: "Instagram", subtitle: 7),
+          CompositionalModel(image: "favourites", title: "Favourites", subtitle: 28),
+          CompositionalModel(image: "polar", title: "Polar", subtitle: 2),
+          CompositionalModel(image: "fltr", title: "FLTR", subtitle: 1),
+          CompositionalModel(image: "dream", title: "Dream", subtitle: 1),
+          CompositionalModel(image: "pinterest", title: "Pinterest", subtitle: 3),
+          CompositionalModel(image: "vn", title: "VN", subtitle: 2)],
         
-        [CompositionalModel(sharedImage: "", image: "", title: "The Police", subtitle: 46),
-         CompositionalModel(sharedImage: "", image: "", title: "Led Zeppelin", subtitle: 23),
-         CompositionalModel(sharedImage: "", image: "", title: "Megadeth", subtitle: 21),
-         CompositionalModel(sharedImage: "", image: "", title: "Red Hot Chili Peppers", subtitle: 30)]
+        [CompositionalModel(sharedImage: "police2", image: "police", title: "The Police", subtitle: 46),
+         CompositionalModel(sharedImage: "led2", image: "led", title: "Led Zeppelin", subtitle: 23),
+         CompositionalModel(sharedImage: "megadeth2", image: "megadeth", title: "Megadeth", subtitle: 21),
+         CompositionalModel(sharedImage: "red2", image: "red", title: "Red Hot Chili Peppers", subtitle: 30)],
+        
+        [CompositionalModel(image: "video", title: "Videos", subtitle: 655),
+         CompositionalModel(image: "person.crop.rectangle", title: "Selfies", subtitle: 7),
+          CompositionalModel(image: "livephoto", title: "Live Photos", subtitle: 28),
+          CompositionalModel(image: "cube", title: "Portrait", subtitle: 2),
+          CompositionalModel(image: "timelapse", title: "Time-lapse", subtitle: 1),
+          CompositionalModel(image: "camera.viewfinder", title: "Screenshots", subtitle: 1),
+          CompositionalModel(image: "record.circle", title: "Screen Recordings", subtitle: 3)],
+        
+        [CompositionalModel(image: "square.and.arrow.down", title: "Imports", subtitle: 655),
+         CompositionalModel(image: "square.on.square", title: "Dublicates", subtitle: 7),
+          CompositionalModel(image: "eye.slash", title: "Hidden", subtitle: 28),
+          CompositionalModel(image: "trash", title: "Recently Deleted", subtitle: 2)]
     ]
 }
