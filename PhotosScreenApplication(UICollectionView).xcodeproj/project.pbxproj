@@ -13,7 +13,10 @@
 		4B35D79229A24DD0002555B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B35D79129A24DD0002555B5 /* Assets.xcassets */; };
 		4B35D79529A24DD0002555B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B35D79329A24DD0002555B5 /* LaunchScreen.storyboard */; };
 		4B35D7A229A2577F002555B5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4B35D7A129A2577F002555B5 /* SnapKit */; };
-		4B35D7A429A2670C002555B5 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35D7A329A2670C002555B5 /* PhotoCollectionViewCell.swift */; };
+		4B35D7A429A2670C002555B5 /* MyAlbumsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35D7A329A2670C002555B5 /* MyAlbumsCollectionViewCell.swift */; };
+		4B35D7A829A286AA002555B5 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35D7A729A286AA002555B5 /* ListCollectionViewCell.swift */; };
+		4B35D7AA29A28D81002555B5 /* CompositionalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35D7A929A28D81002555B5 /* CompositionalModel.swift */; };
+		4B55419D29A2B779002AD744 /* SharedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55419C29A2B779002AD744 /* SharedCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +27,10 @@
 		4B35D79129A24DD0002555B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B35D79429A24DD0002555B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B35D79629A24DD0002555B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B35D7A329A2670C002555B5 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		4B35D7A329A2670C002555B5 /* MyAlbumsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumsCollectionViewCell.swift; sourceTree = "<group>"; };
+		4B35D7A729A286AA002555B5 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		4B35D7A929A28D81002555B5 /* CompositionalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalModel.swift; sourceTree = "<group>"; };
+		4B55419C29A2B779002AD744 /* SharedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				4B35D78C29A24DCF002555B5 /* ViewController.swift */,
-				4B35D7A329A2670C002555B5 /* PhotoCollectionViewCell.swift */,
+				4B35D7A329A2670C002555B5 /* MyAlbumsCollectionViewCell.swift */,
+				4B55419C29A2B779002AD744 /* SharedCollectionViewCell.swift */,
+				4B35D7A729A286AA002555B5 /* ListCollectionViewCell.swift */,
+				4B35D7A929A28D81002555B5 /* CompositionalModel.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -178,7 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B35D78D29A24DCF002555B5 /* ViewController.swift in Sources */,
-				4B35D7A429A2670C002555B5 /* PhotoCollectionViewCell.swift in Sources */,
+				4B35D7AA29A28D81002555B5 /* CompositionalModel.swift in Sources */,
+				4B35D7A829A286AA002555B5 /* ListCollectionViewCell.swift in Sources */,
+				4B55419D29A2B779002AD744 /* SharedCollectionViewCell.swift in Sources */,
+				4B35D7A429A2670C002555B5 /* MyAlbumsCollectionViewCell.swift in Sources */,
 				4B35D78929A24DCF002555B5 /* AppDelegate.swift in Sources */,
 				4B35D78B29A24DCF002555B5 /* SceneDelegate.swift in Sources */,
 			);

@@ -1,15 +1,13 @@
 //
-//  PhotoCollectionViewCell.swift
+//  ListCollectionViewCell.swift
 //  PhotosScreenApplication(UICollectionView)
 //
 //  Created by Nika Semenkova on 19.02.2023.
 //
 
 import UIKit
-import SnapKit
 
-class PhotoCollectionViewCell: UICollectionViewCell {
-    
+class ListCollectionViewCell: UICollectionViewCell {
     static let identifier = "PhotoCollectionViewCell"
     
     // MARK: - Outlets
