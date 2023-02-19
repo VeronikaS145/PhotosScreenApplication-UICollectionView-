@@ -14,6 +14,7 @@
 		4B35D79529A24DD0002555B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B35D79329A24DD0002555B5 /* LaunchScreen.storyboard */; };
 		4B35D7A229A2577F002555B5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4B35D7A129A2577F002555B5 /* SnapKit */; };
 		4B35D7A429A2670C002555B5 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35D7A329A2670C002555B5 /* PhotoCollectionViewCell.swift */; };
+		4B35D7A629A282A8002555B5 /* LIstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35D7A529A282A8002555B5 /* LIstCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		4B35D79429A24DD0002555B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B35D79629A24DD0002555B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B35D7A329A2670C002555B5 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		4B35D7A529A282A8002555B5 /* LIstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIstCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				4B35D78C29A24DCF002555B5 /* ViewController.swift */,
 				4B35D7A329A2670C002555B5 /* PhotoCollectionViewCell.swift */,
+				4B35D7A529A282A8002555B5 /* LIstCollectionViewCell.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				4B35D78D29A24DCF002555B5 /* ViewController.swift in Sources */,
 				4B35D7A429A2670C002555B5 /* PhotoCollectionViewCell.swift in Sources */,
 				4B35D78929A24DCF002555B5 /* AppDelegate.swift in Sources */,
+				4B35D7A629A282A8002555B5 /* LIstCollectionViewCell.swift in Sources */,
 				4B35D78B29A24DCF002555B5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
