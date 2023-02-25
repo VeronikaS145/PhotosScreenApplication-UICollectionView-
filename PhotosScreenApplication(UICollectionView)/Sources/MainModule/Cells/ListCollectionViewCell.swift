@@ -25,8 +25,8 @@ class ListCollectionViewCell: UICollectionViewCell {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.tintColor = .systemBlue
-        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        label.textColor = .systemBlue
+        label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -36,7 +36,7 @@ class ListCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 0
         label.textAlignment = .left
         label.textColor = .systemGray
-        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -83,7 +83,9 @@ class ListCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.image.image = nil
+        image.image = nil
+        lockImage.image = nil
+        subtitleLabel.text = nil
     }
     
     // MARK: - Setups
@@ -100,8 +102,8 @@ class ListCollectionViewCell: UICollectionViewCell {
     private func setupLayout() {
         image.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.left.equalTo(self).offset(14)
-            make.width.height.equalTo(25)
+            make.left.equalTo(self).offset(8)
+            make.width.height.equalTo(27)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -124,7 +126,7 @@ class ListCollectionViewCell: UICollectionViewCell {
             make.bottom.equalTo(self).offset(1)
             make.right.equalTo(self).offset(0)
             make.height.equalTo(0.5)
-            make.width.equalTo(325)
+            make.width.equalTo(333)
         }
         
         lockImage.snp.makeConstraints { make in
@@ -136,23 +138,27 @@ class ListCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private methods
     
-    private func setLockImage() {
+    private func hideUIElements() {
+        // Lock image
         if titleLabel.text == "Hidden" || titleLabel.text == "Recently Deleted" {
             subtitleLabel.isHidden = true
             lockImage.image = UIImage(systemName: "lock.fill")
         } else {
             lockImage.isHidden = true
         }
+        
+        // Separator view
+        if titleLabel.text == "Screen Recordings" || titleLabel.text == "Recently Deleted" { separatorView.isHidden = true }
     }
     
     // MARK: - Configuration
     
     func configuration(model: CompositionalModel) {
         self.image.image = UIImage(systemName: model.image)
-        self.titleLabel.text = model.title
-        self.subtitleLabel.text = "\(model.subtitle)"
-        self.acessoryImage.image = UIImage(systemName: "chevron.right")
+        titleLabel.text = model.title
+        subtitleLabel.text = "\(model.subtitle)"
+        acessoryImage.image = UIImage(systemName: "chevron.right")
         
-        setLockImage()
+        hideUIElements()
     }
 }

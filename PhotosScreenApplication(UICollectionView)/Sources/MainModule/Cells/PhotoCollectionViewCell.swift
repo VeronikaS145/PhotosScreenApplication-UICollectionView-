@@ -45,6 +45,12 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    private lazy var heartImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .white
+        return imageView
+    }()
     
     // MARK: - Initializers
     
@@ -65,6 +71,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         self.littleImage.image = nil
         self.image.image = nil
+        self.heartImage.image = nil
     }
     
     // MARK: - Setups
@@ -74,14 +81,15 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(littleImage)
         contentView.addSubview(titleLabel)
         contentView.addSubview(subtitleLabel)
+        contentView.addSubview(heartImage)
     }
     
     private func setupLayout() {
         image.snp.makeConstraints { make in
-            make.left.top.right.equalTo(contentView)
+            make.left.top.right.equalTo(self)
             make.height.equalTo(170)
         }
-
+        
         littleImage.snp.makeConstraints { make in
             make.height.width.equalTo(38)
             make.right.bottom.equalTo(image).offset(-7)
@@ -89,22 +97,34 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(image.snp.bottom).offset(5)
-            make.left.equalTo(contentView).offset(2)
+            make.left.equalTo(self).offset(2)
         }
-
+        
         subtitleLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom)
-            make.left.equalTo(contentView).offset(2)
+            make.left.equalTo(self).offset(2)
+        }
+        
+        heartImage.snp.makeConstraints { make in
+            make.top.equalTo(image.snp.top).offset(145)
+            make.left.equalTo(self).offset(10)
+            make.height.width.equalTo(18)
         }
     }
     
     // MARK: - Private methods
     
-    private func setBorderLittleImage() {
+    private func hideUIElements() {
         if littleImage.image != nil {
-            littleImage.layer.borderWidth = 1
+            littleImage.isHidden = false
         } else {
-            littleImage.layer.borderWidth = 0
+            littleImage.isHidden = true
+        }
+        
+        if titleLabel.text == "Favourites" {
+            heartImage.image = UIImage(systemName: "heart.fill")
+        } else {
+            heartImage.isHidden = true
         }
     }
     
@@ -116,6 +136,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         self.titleLabel.text = model.title
         self.subtitleLabel.text = "\(model.subtitle)"
         
-        setBorderLittleImage()
+        hideUIElements()
     }
 }

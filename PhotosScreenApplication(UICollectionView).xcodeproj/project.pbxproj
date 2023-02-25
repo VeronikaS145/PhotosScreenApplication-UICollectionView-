@@ -16,6 +16,7 @@
 		4B35D7AA29A28D81002555B5 /* CompositionalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35D7A929A28D81002555B5 /* CompositionalModel.swift */; };
 		4B55419D29A2B779002AD744 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55419C29A2B779002AD744 /* PhotoCollectionViewCell.swift */; };
 		4B91E9A529AA71EC0064D3F8 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B91E9A429AA71EC0064D3F8 /* ListCollectionViewCell.swift */; };
+		4B91E9A929AA8E1D0064D3F8 /* AlbumCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B91E9A829AA8E1D0064D3F8 /* AlbumCellHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		4B35D7A929A28D81002555B5 /* CompositionalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalModel.swift; sourceTree = "<group>"; };
 		4B55419C29A2B779002AD744 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		4B91E9A429AA71EC0064D3F8 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		4B91E9A829AA8E1D0064D3F8 /* AlbumCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				4B55419C29A2B779002AD744 /* PhotoCollectionViewCell.swift */,
 				4B91E9A429AA71EC0064D3F8 /* ListCollectionViewCell.swift */,
+				4B91E9A829AA8E1D0064D3F8 /* AlbumCellHeader.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B91E9A929AA8E1D0064D3F8 /* AlbumCellHeader.swift in Sources */,
 				4B91E9A529AA71EC0064D3F8 /* ListCollectionViewCell.swift in Sources */,
 				4B35D78D29A24DCF002555B5 /* PhotoCollectionViewController.swift in Sources */,
 				4B35D7AA29A28D81002555B5 /* CompositionalModel.swift in Sources */,
