@@ -17,7 +17,7 @@ class PhotoCollectionViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
-        collectionView.register(MediaTableViewCell.self, forCellWithReuseIdentifier: MediaTableViewCell.identifier)
+        collectionView.register(ListCollectionViewCell.self, forCellWithReuseIdentifier: ListCollectionViewCell.identifier)
         return collectionView
     }()
     
@@ -32,8 +32,8 @@ class PhotoCollectionViewController: UIViewController {
 
     // MARK: - Setups
     private func setupView() {
-        title = "Albums"
         navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Albums"
         
         let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add,
                                      target: self, action: nil)
@@ -101,28 +101,28 @@ class PhotoCollectionViewController: UIViewController {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                       heightDimension: .fractionalHeight(1))
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 0, bottom: 1, trailing: 0)
+                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                       heightDimension: .absolute(45))
+                                                       heightDimension: .absolute(44))
                 let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
 
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 20, trailing: 10)
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 50, leading: 10, bottom: 50, trailing: 10)
                 
                 return layoutSection
             case 3:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                       heightDimension: .fractionalHeight(1))
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 0, bottom: 1, trailing: 0)
+                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                       heightDimension: .absolute(45))
+                                                       heightDimension: .absolute(44))
                 let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
 
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 20, trailing: 10)
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 50, leading: 10, bottom: 50, trailing: 10)
                 
                 return layoutSection
             default:
@@ -168,9 +168,13 @@ extension PhotoCollectionViewController: UICollectionViewDataSource, UICollectio
             item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
             return item
         case 2:
-//            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediaTableViewCell.identifier, for: indexPath) as! MediaTableViewCell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: ListCollectionViewCell.identifier, for: indexPath) as! ListCollectionViewCell
+            item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
+            return item
         case 3:
-//            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediaTableViewCell.identifier, for: indexPath) as! MediaTableViewCell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: ListCollectionViewCell.identifier, for: indexPath) as! ListCollectionViewCell
+            item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
+            return item
         default:
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
             item.configuration(model: CompositionalModel.photoArray[indexPath.section][indexPath.item])
